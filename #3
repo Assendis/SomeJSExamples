@@ -1,0 +1,12 @@
+// #3
+
+function returnObject()
+{
+  var myobj =
+  {
+    firstName: person.firstName,
+    lastName:  person.lastName,
+		details:   person.details.age
+  }
+	return myobj;
+}
