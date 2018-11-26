@@ -1,0 +1,23 @@
+// #1
+
+function writeProperties()
+{
+  var x;
+  var a=[];
+
+  for (x in persons)
+  {
+    if( persons[x].id != null )
+    {
+        var obj = {
+        id:        persons[x].id,
+        firstName: persons[x].firstName,
+        lastName:  persons[x].lastName,
+        age:       persons[x].details.age
+      }
+      a.push(obj);
+    }
+  }
+
+return a;
+}
