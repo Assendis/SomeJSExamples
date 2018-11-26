@@ -1,0 +1,23 @@
+// #4
+
+function writeOlds()
+{
+  var x;
+  var a=[];
+
+  for (x in persons)
+  {
+    if( persons[x].details.age < 16 )
+    {
+        var obj =
+        {
+          id:         persons[x].id,
+          firstName:  persons[x].firstName,
+          lastName:   persons[x].lastName,
+          age:        persons[x].details.age
+        }
+        a.push(obj);
+    }
+  }
+  return a;
+}
