@@ -1,0 +1,18 @@
+// #2
+
+function writeFullName()
+{
+  var x;
+  var a=[];
+
+  for (x in persons)
+  {
+      var obj=
+      {
+        firstName: persons[x].firstName,
+        lastName:  persons[x].lastName
+      }
+      a.push(obj);
+  }
+  return a;
+}
