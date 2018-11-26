@@ -1,37 +1,35 @@
-// #5
-
 function checkDuplicates()
 {
-	var a=[];
-	for (x in orders)
-	{
-		if(orders[x].locality == dataSentToServer.locality)
-		{
-        var custIndex = checkCostumers(orders[x].customerId);
-        if (custIndex != null)
+  var a=[];
+  for (x in orders)
+  {
+    if(orders[x].locality == dataSentToServer.locality)
+    {
+      var custIndex = checkCostumers(orders[x].customerId);
+      if (custIndex != null)
+      {
+        var cust = customers[custIndex];
+        var obj=
         {
-          var cust = customers[custIndex];
-          var obj=
-					{
-				      locality:   orders[x].locality,
-				      customerId: orders[x].customerId,
-				      firstName:  cust.firstName,
-				      lastName:   cust.lastName
-					}
-				 a.push(obj);
+          locality:   orders[x].locality,
+          customerId: orders[x].customerId,
+          firstName:  cust.firstName,
+          lastName:   cust.lastName
         }
-		}
-	}
-	return a;
+        a.push(obj);
+      }
+    }
+  }
+  return a;
 }
 
 
 function checkCostumers(y)
 {
-	for (z in customers)
-	{
-		if (customers[z].customerId == y && check(z)) {return z;}
-	}
+  for (z in customers)
+  {
+    if (customers[z].customerId == y && check(z)) {return z;}
+  }
   return null;
 }
 
@@ -39,9 +37,9 @@ function checkCostumers(y)
 function check(t)
 {
   if(customers[t].lastName == dataSentToServer.lastName ||
-		 customers[t].tnumber  == dataSentToServer.tnumber  ||
-		 customers[t].mnumber  == dataSentToServer.mnumber  ||
-		 customers[t].email    == dataSentToServer.email)
-		 {return true;}
-	else return false;
+     customers[t].tnumber  == dataSentToServer.tnumber  ||
+     customers[t].mnumber  == dataSentToServer.mnumber  ||
+     customers[t].email    == dataSentToServer.email)
+    {return true;}
+    else return false;
 }
